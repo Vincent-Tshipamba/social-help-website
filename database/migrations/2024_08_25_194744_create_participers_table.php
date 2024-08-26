@@ -22,7 +22,7 @@ return new class extends Migration
             $table->unsignedBigInteger('numaid');
             $table->unsignedBigInteger('iddonat');
             $table->foreign('numaid')->references('numaid')->on('aide_sociales')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('iddonat')->references('iddonat')->on('aide_sociales')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('iddonat')->references('iddonat')->on('donateurs')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

@@ -10,18 +10,18 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            AideSocialeSeeder::class,
-            AnalyseSeeder::class,
+            ServiceSeeder::class,
+            PastorSeeder::class,
+            NatureSeeder::class,
             CelluleSeeder::class,
-            DemandeSeeder::class,
             DemandeurSeeder::class,
             DonateurSeeder::class,
-            FaireObjetSeeder::class,
+            AnalyseSeeder::class,
+            DemandeSeeder::class,
+            AideSocialeSeeder::class,
             LancerSeeder::class,
-            NatureSeeder::class,
             ParticiperSeeder::class,
-            ServiceSeeder::class,
-            PastorSeeder::class
+            FaireObjetSeeder::class
         ]);
         User::factory(10)->create();
 

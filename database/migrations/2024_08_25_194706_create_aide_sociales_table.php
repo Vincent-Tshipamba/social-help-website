@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('codnat');
             $table->unsignedBigInteger('codanalys');
             $table->foreign('codnat')->references('codnat')->on('natures')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('codanalys')->references('codanalys')->on('analyses')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('codanalys')->references('numanalys')->on('analyses')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

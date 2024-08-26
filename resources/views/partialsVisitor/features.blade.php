@@ -1,4 +1,4 @@
-    <section class="Feautes section">
+    <section class="Feautes section" id="features">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
