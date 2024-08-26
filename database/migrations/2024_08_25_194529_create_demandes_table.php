@@ -12,7 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('demandes', function (Blueprint $table) {
-            $table->id();
+            $table->id('numdem');
+            $table->date('datdem');
+            $table->text('motif');
+            $table->time('heuredem');
+            $table->string('montdema');
+            $table->unsignedBigInteger('num_demandeur');
+            $table->foreign('num_demandeur')->references('num_demandeur')->on('demandeurs')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

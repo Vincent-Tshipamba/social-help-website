@@ -17,7 +17,14 @@ class DemandeurFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'noms_demandeur' => $this->faker->name,
+            'sexe' => $this->faker->title,
+            'datnais' => $this->faker->date,
+            'adresse' => $this->faker->address,
+            'contact' => $this->faker->phoneNumber,
+            'profess' => $this->faker->jobTitle,
+            'departement' => $this->faker->word,
+            'codcell' => $this->faker->randomDigitNotNull()
         ];
     }
 }

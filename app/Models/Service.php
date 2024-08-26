@@ -10,12 +10,16 @@ class Service extends Model
 {
     use HasFactory;
 
+    protected $table = 'services';
+
+    protected $primaryKey = 'codserv';
+
     protected $fillable = [
         'libserv'
     ];
 
-    public function pastor(): HasMany
+    public function pastors(): HasMany
     {
-        return $this->hasMany(Pastor::class);
+        return $this->hasMany(Pastor::class, 'codserv');
     }
 }

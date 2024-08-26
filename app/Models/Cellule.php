@@ -11,13 +11,17 @@ class Cellule extends Model
 {
     use HasFactory;
 
+    protected $table = 'cellules';
+
+    protected $primaryKey = 'codcell' ;
+
     protected $fillable = [
         'denom',
         'adresse'
     ];
 
-    public function demandeur(): HasMany
+    public function demandeurs(): HasMany
     {
-        return $this->hasMany(Demandeur::class);
+        return $this->hasMany(Demandeur::class, 'codcell', 'codcell');
     }
 }

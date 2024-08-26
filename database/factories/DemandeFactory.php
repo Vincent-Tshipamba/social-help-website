@@ -17,7 +17,11 @@ class DemandeFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'datdem' => $this->faker->date,
+            'motif' => $this->faker->sentence(6),
+            'heuredem' => $this->faker->time,
+            'montdema' => $this->faker->numberBetween(10, 100000),
+            'num_demandeur' => $this->faker->randomDigitNotNull()
         ];
     }
 }

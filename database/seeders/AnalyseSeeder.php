@@ -2,16 +2,14 @@
 
 namespace Database\Seeders;
 
+use App\Models\Analyse;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class AnalyseSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        //
+        Analyse::factory(50)->create();
     }
 }

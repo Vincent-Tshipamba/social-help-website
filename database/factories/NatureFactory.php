@@ -17,7 +17,7 @@ class NatureFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'libnat' => $this->faker->word
         ];
     }
 }

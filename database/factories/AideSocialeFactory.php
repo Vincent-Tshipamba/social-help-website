@@ -17,7 +17,10 @@ class AideSocialeFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'dataide' => $this->faker->date,
+            'motif' => $this->faker->sentence(5),
+            'codnat' => $this->faker->randomDigitNotNull(),
+            'codanalys' => $this->faker->randomDigitNotNull()
         ];
     }
 }

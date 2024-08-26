@@ -2,16 +2,14 @@
 
 namespace Database\Seeders;
 
+use App\Models\AideSociale;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class AideSocialeSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        //
+        AideSociale::factory(50)->create();
     }
 }

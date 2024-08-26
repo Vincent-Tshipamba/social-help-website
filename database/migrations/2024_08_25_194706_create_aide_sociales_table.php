@@ -14,7 +14,11 @@ return new class extends Migration
         Schema::create('aide_sociales', function (Blueprint $table) {
             $table->id('numaid');
             $table->date('dataide');
-            $table->string('motif');
+            $table->text('motif');
+            $table->unsignedBigInteger('codnat');
+            $table->unsignedBigInteger('codanalys');
+            $table->foreign('codnat')->references('codnat')->on('natures')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('codanalys')->references('codanalys')->on('analyses')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

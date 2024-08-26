@@ -17,7 +17,10 @@ class DonateurFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nomsdonat' => $this->faker->name,
+            'adresse' => $this->faker->address,
+            'telephone' => $this->faker->phoneNumber,
+            'profess' => $this->faker->jobTitle,
         ];
     }
 }

@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('lancers', function (Blueprint $table) {
             $table->id();
+            $table->date('datelan');
+            $table->date('datlimit');
+            $table->time('heure');
+            $table->text('motif');
+            $table->string('montbesoin');
+            $table->unsignedBigInteger('matri');
+            $table->unsignedBigInteger('numaid');
+            $table->foreign('matri')->references('matri')->on('pastors')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('numaid')->references('numaid')->on('aide_sociales')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

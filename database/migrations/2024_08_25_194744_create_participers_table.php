@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('participers', function (Blueprint $table) {
             $table->id();
+            $table->date('datcontribu');
+            $table->text('motifcontr');
+            $table->time('heure');
+            $table->string('montantcontr');
+            $table->string('modeparticipat');
+            $table->text('observation');
+            $table->unsignedBigInteger('numaid');
+            $table->unsignedBigInteger('iddonat');
+            $table->foreign('numaid')->references('numaid')->on('aide_sociales')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('iddonat')->references('iddonat')->on('aide_sociales')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

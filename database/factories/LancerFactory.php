@@ -17,7 +17,13 @@ class LancerFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'datelan' => $this->faker->date,
+            'datlimit' => $this->faker->date,
+            'heure' => $this->faker->time,
+            'motif' => $this->faker->sentence(6, true),
+            'montbesoin' => $this->faker->randomDigitNotNull(),
+            'matri' => $this->faker->randomDigitNotNull(),
+            'numaid' => $this->faker->randomDigitNotNull()
         ];
     }
 }

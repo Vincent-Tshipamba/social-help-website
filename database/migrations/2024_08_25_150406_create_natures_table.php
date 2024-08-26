@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('natures', function (Blueprint $table) {
-            $table->increments('codnat')->primary();
+            $table->id('codnat');
             $table->string('libnat');
             $table->timestamps();
         });

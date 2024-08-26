@@ -17,7 +17,14 @@ class ParticiperFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'datcontribu' => $this->faker->date,
+            'motifcontr' => $this->faker->sentence,
+            'heure' => $this->faker->time,
+            'montantcontr' => $this->faker->numberBetween(100, 100000),
+            'modeparticipat' => $this->faker->word,
+            'observation' => $this->faker->sentence(10),
+            'numaid' => $this->faker->randomDigitNotNull(),
+            'iddonat' => $this->faker->randomDigitNotNull(),
         ];
     }
 }

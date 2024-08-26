@@ -2,16 +2,14 @@
 
 namespace Database\Seeders;
 
+use App\Models\Demandeur;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DemandeurSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        //
+        Demandeur::factory(50)->create();
     }
 }

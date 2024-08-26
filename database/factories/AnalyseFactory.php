@@ -17,7 +17,7 @@ class AnalyseFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'objet' => $this->faker->sentence(10)
         ];
     }
 }

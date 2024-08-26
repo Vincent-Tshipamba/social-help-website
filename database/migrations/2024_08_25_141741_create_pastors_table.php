@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('prenom');
             $table->string('fonction');
             $table->string('contact');
-            $table->foreignId('codserv')->constrained(table: 'services', column: 'codserv'  , indexName: 'codserv')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('codserv');
+            $table->foreign('codserv')->references('codserv')->on('services')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

@@ -5,10 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Demandeur extends Model
 {
     use HasFactory;
+
+    protected $table = 'demandeurs';
+
+    protected $primaryKey = 'num_demandeur';
 
     protected $fillable = [
         'noms_demandeur',
@@ -16,13 +21,18 @@ class Demandeur extends Model
         'datnais',
         'adresse',
         'contact',
-        'profession',
+        'profess',
         'departement',
         'codcell'
     ];
 
-    public function cellule() : BelongsTo 
+    public function cellule() : BelongsTo
     {
-        return $this->belongsTo(Cellule::class);
+        return $this->belongsTo(Cellule::class, 'codcell', 'codcell');
+    }
+
+    public function analyses() : BelongsToMany
+    {
+        return $this->belongsToMany(Analyse::class, 'faire_objets', 'num_demandeur', 'numanalys');
     }
 }

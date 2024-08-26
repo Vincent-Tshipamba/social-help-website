@@ -2,14 +2,14 @@
 
 namespace Database\Seeders;
 
-use App\Models\Lancer;
+use App\Models\FaireObjet;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class LancerSeeder extends Seeder
+class FaireObjetSeeder extends Seeder
 {
     public function run(): void
     {
-        Lancer::factory(50)->create();
+        FaireObjet::factory(50)->create();
     }
 }
