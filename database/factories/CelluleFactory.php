@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Service>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Cellule>
  */
-class ServiceFactory extends Factory
+class CelluleFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,8 @@ class ServiceFactory extends Factory
     public function definition(): array
     {
         return [
-            'libserv' => $this->faker->word
+            'denom' => $this->faker->word,
+            'adresse' => $this->faker->address
         ];
     }
 }

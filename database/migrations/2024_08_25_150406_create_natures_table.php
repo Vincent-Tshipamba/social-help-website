@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('services', function (Blueprint $table) {
-            $table->id('codserv');
-            $table->string('libserv');
+        Schema::create('natures', function (Blueprint $table) {
+            $table->increments('codnat')->primary();
+            $table->string('libnat');
             $table->timestamps();
         });
     }
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('services');
+        Schema::dropIfExists('natures');
     }
 };

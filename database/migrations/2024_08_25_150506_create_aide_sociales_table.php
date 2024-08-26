@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('services', function (Blueprint $table) {
-            $table->id('codserv');
-            $table->string('libserv');
+        Schema::create('aide_sociales', function (Blueprint $table) {
+            $table->id('numaid');
+            $table->date('dataide');
+            $table->string('motif');
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('services');
+        Schema::dropIfExists('aide_sociales');
     }
 };

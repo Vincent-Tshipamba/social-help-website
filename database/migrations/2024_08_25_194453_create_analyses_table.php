@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('services', function (Blueprint $table) {
-            $table->id('codserv');
-            $table->string('libserv');
+        Schema::create('analyses', function (Blueprint $table) {
+            $table->id('numanalys');
+            $table->string('objet');
             $table->timestamps();
         });
     }
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('services');
+        Schema::dropIfExists('analyses');
     }
 };
