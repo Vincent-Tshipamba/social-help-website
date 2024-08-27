@@ -52,7 +52,6 @@
                                         <li><a href="#">Qui sommes-nous ? </a></li>
                                         <li><a href="#contact">Nous contacter </a></li>
                                         <li><a href="#">S'inscrire </a></li>
-                                        <li><a href="#">Se connecter </a></li>
                                     </ul>
                                 </nav>
                             </div>

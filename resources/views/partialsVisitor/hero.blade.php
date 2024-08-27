@@ -1,4 +1,4 @@
-<section class="container px-3 py-12 bg-white md:px-0 mb-24">
+<section class="container px-3 py-12 bg-white md:px-0">
     <div class="flex flex-wrap items-center">
         <div class="w-full md:w-1/2 md:px-3">
             <div
@@ -10,9 +10,9 @@
                 </h1>
                 <p class="mx-auto text-base text-gray-500 sm:max-w-md lg:text-xl md:max-w-3xl">Notre communauté chrétienne s'engage à répondre aux besoins les plus urgents, pour apporter espoir et soutien à ceux qui en ont besoin.</p>
                 <div class="relative flex flex-col sm:flex-row sm:space-x-4">
-                    <a href="#_"
+                    <a href="{{ route('register') }}"
                         class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-blue-600 rounded-md sm:mb-0 hover:bg-blue-700 sm:w-auto">
-                        Faire une demande
+                        Nous rejoindre
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-1" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12"></line>

@@ -39,6 +39,6 @@ class AideSociale extends Model
 
     public function nature() : BelongsTo
     {
-        return $this->belongsTo(Nature::class, 'codanalys', 'numanalys');
+        return $this->belongsTo(Nature::class, 'codnat', 'codnat');
     }
 }

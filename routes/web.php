@@ -1,16 +1,18 @@
 <?php
 
+use App\Http\Controllers\AideSocialeController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 
-Route::get('/', function () {
-    return view('index');
-})->name('root');
+Route::get('/', [HomeController::class, 'index'])->name('root');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
+Route::resource('donates', AideSocialeController::class)->middleware('auth', 'verified');
+
+Route::get('/admin', function () {
+    return view('admin.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/register', function () {

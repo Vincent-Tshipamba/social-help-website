@@ -65,18 +65,18 @@
     <!-- End Preloader -->
 
     <!-- Header Area -->
-    @include('partialsVisitor.header')
+    @include('admin.layouts.navigation')
     <!-- End Header Area -->
 
     <!-- Page Content -->
     <main>
-        {{ $slot }}
+        
     </main>
 
     <!-- Footer Area -->
     @include('partialsVisitor.footer')
 
-    
+
     <!-- jQuery and its dependencies -->
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/jquery-migrate-3.0.0.js') }}"></script>
