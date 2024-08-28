@@ -306,7 +306,7 @@
                     let i = $('meta[name="csrf-token"]').attr('content')
                     event.preventDefault();
                     var formData2 = $(this).serialize();
-                    var datcontribu = new Date();
+                    var datcontribu = new Date('Y-m-d');
                     var motifcontr = @json($aide->motif);
                     var heure = datcontribu.toLocaleTimeString();
                     var observation = '';
