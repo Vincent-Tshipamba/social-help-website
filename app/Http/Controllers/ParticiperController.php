@@ -29,7 +29,18 @@ class ParticiperController extends Controller
      */
     public function store(StoreParticiperRequest $request)
     {
-        //
+        $participer = Participer::firstOrCreate([
+            'datcontribu' => $request->input('datcontribu'),
+            'motifcontr' => $request->input('motifcontr'),
+            'heure' => $request->input('heure'),
+            'montantcontr' => $request->input('montantcontr'),
+            'modeparticipat' => $request->input('modeparticipat'),
+            'observation' => $request->input('observation'),
+            'numaid' => $request->input('numaid'),
+            'iddonat' => $request->input('iddonat')
+        ]);
+
+        return redirect()->route('root')->with('success', 'Don effectué avec succès !');
     }
 
     /**

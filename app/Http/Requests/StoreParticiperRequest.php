@@ -11,7 +11,7 @@ class StoreParticiperRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,14 @@ class StoreParticiperRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'datcontribu' => 'required|date',
+            'motifcontr' => 'required|string',
+            'heure' => 'required|string',
+            'montant' => 'required|string',
+            'modeparticipat' => 'required|string',
+            'observation' => 'string|nullable',
+            'numaid' => 'required|integer',
+            'iddonat' => 'required|integer',
         ];
     }
 }

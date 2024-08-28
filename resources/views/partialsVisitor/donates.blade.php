@@ -15,7 +15,7 @@
                         <h3 class="text-2xl font-bold mb-4">{{ $aide_sociale->motif }}</h3>
                         <p class="text-gray-600 mb-4">Date : {{ $aide_sociale->dataide }}</p>
                         <p class="text-gray-600 mb-4">Nature : {{ $aide_sociale->codnat }}</p>
-                        <a href="{{ route('donates.index') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Faire un don</a>
+                        <a href="{{ route('create_donator', $aide_sociale->numaid) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Faire un don</a>
                     </div>
                 </div>
             @endforeach

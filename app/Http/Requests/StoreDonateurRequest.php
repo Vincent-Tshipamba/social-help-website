@@ -11,7 +11,7 @@ class StoreDonateurRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class StoreDonateurRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nomsdonat' => 'required|string|min:5',
+            'adresse' => 'required|string|min:10',
+            'telephone' => 'required|string|min:9',
+            'profess' => 'required|string:min:5',
         ];
     }
 }

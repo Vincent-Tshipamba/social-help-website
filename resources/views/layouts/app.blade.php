@@ -42,8 +42,11 @@
     <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
-
-    <!-- Scripts -->
+    <style>
+        @import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);
+    </style>
+    <!-- Scripts
+        -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -76,7 +79,7 @@
     <!-- Footer Area -->
     @include('partialsVisitor.footer')
 
-    
+
     <!-- jQuery and its dependencies -->
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/jquery-migrate-3.0.0.js') }}"></script>

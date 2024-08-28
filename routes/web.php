@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AideSocialeController;
+use App\Http\Controllers\DonateurController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
@@ -9,7 +10,10 @@ use App\Http\Controllers\ProfileController;
 
 Route::get('/', [HomeController::class, 'index'])->name('root');
 
-Route::resource('donates', AideSocialeController::class)->middleware('auth', 'verified');
+Route::get('/donators', [DonateurController::class, 'index']);
+Route::post('/donators', [DonateurController::class, 'store']);
+Route::post('/participers', [DonateurController::class, 'store']);
+Route::get('/donators/create/{numaid}', [DonateurController::class, 'create'])->name('create_donator');
 
 Route::get('/admin', function () {
     return view('admin.dashboard');

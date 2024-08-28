@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Donateur;
 use App\Http\Requests\StoreDonateurRequest;
 use App\Http\Requests\UpdateDonateurRequest;
+use App\Models\AideSociale;
 
 class DonateurController extends Controller
 {
@@ -19,9 +20,10 @@ class DonateurController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($numaid)
     {
-        //
+        $aide = AideSociale::find($numaid);
+        return view('donators.create', compact('aide'));
     }
 
     /**
@@ -29,7 +31,14 @@ class DonateurController extends Controller
      */
     public function store(StoreDonateurRequest $request)
     {
-        //
+        $donateur = Donateur::firstOrCreate([
+            'nomsdonat' => $request->input('nomsdonat'),
+            'adresse' => $request->input('adresse'),
+            'telephone' => $request->input('telephone'),
+            'profess' => $request->input('profess')
+        ]);
+
+        return $donateur;
     }
 
     /**
