@@ -55,7 +55,7 @@ class UserController extends Controller
                 'email' => $validatedData['email'],
                 'password' => Hash::make($validatedData['password']),
             ]);
-            return back()->with('success', "L'utilisateur ". $request->name . "a été créé avec succès !" );
+            return back()->with('success', "L'utilisateur ". $request->name . " a été créé avec succès !" );
         } catch (\Exception $e) {
             return back()->withErrors(['error' => "An error occurred while creating the user. $e"])->withInput();
         }
