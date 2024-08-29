@@ -28,6 +28,15 @@ Route::group(['prefix' => 'participers'], function () {
     Route::post('/', [ParticiperController::class, 'store']);
 });
 
+// AideSociales Routes
+Route::group(['prefix' => 'socialhelps'], function () {
+    // SocialHelp index
+    Route::get('/', [AideSocialeController::class, 'index'])->name('socialhelps');
+    Route::get('/{numaid}', [AideSocialeController::class, 'show'])->name('socialhelps.show');
+    // Store Participer
+    Route::post('/', [ParticiperController::class, 'store']);
+});
+
 // Users Routes
 Route::group(['prefix' => 'users'], function () {
     // Users Index
