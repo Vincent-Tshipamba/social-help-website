@@ -12,7 +12,8 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <!-- Favicon -->
-    <link rel="icon" href="img/favicon.png">
+    <link rel="icon" href="{{ asset('img/favicon.png') }}">
+
 
     <!-- Google Fonts -->
     <link
@@ -42,6 +43,9 @@
     <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.4/css/dataTables.dataTables.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.2/css/responsive.dataTables.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.0.2/css/buttons.dataTables.css">
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -57,13 +61,12 @@
     </div>
     <!-- End Preloader -->
 
-    <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div class="bg-gray-100 dark:bg-gray-900 mt-24">
         @include('admin.layouts.navigation')
-        <div class="p-4 sm:ml-64 mt-10">
-
-            <!-- Page Content -->
+        <div class="p-8 sm:ml-64 mt-10">
             <main>
                 @yield('content')
+
             </main>
         </div>
     </div>
@@ -73,6 +76,21 @@
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/jquery-migrate-3.0.0.js') }}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
+
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.colVis.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.2/js/dataTables.buttons.js"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.2/js/dataTables.responsive.js"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.2/js/responsive.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedcolumns/5.0.1/js/dataTables.fixedColumns.js"></script>
+    <script src="https://cdn.datatables.net/fixedcolumns/5.0.1/js/fixedColumns.dataTables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
 
     <!-- Bootstrap and its dependencies -->
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
@@ -94,6 +112,7 @@
     <script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
     <script src="{{ asset('js/steller.js') }}"></script>
     <script src="{{ asset('js/wow.min.js') }}"></script>
+
 
     <!-- Counter Up CDN JS -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>

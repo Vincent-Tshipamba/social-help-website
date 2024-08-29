@@ -14,7 +14,8 @@ class DonateurController extends Controller
      */
     public function index()
     {
-        //
+        $donators = Donateur::latest()->get();
+        return view('admin.donators.index', compact('donators'));
     }
 
     /**
