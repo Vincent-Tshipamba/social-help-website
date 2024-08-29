@@ -64,17 +64,16 @@
     </div>
     <!-- End Preloader -->
 
-    <!-- Header Area -->
-    @include('admin.layouts.navigation')
-    <!-- End Header Area -->
+    <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+        @include('admin.layouts.navigation')
+        <div class="p-4 sm:ml-64 mt-10">
 
-    <!-- Page Content -->
-    <main>
-        
-    </main>
-
-    <!-- Footer Area -->
-    @include('partialsVisitor.footer')
+            <!-- Page Content -->
+            <main>
+                @yield('content')
+            </main>
+        </div>
+    </div>
 
 
     <!-- jQuery and its dependencies -->
