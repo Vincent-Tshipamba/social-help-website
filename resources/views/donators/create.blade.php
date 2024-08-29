@@ -37,7 +37,7 @@
                 </div>
             </li>
         </ol>
-        <div class="flex">
+        <div class="flex gap-5">
             <div id="first-step" class="bg-white p-8 rounded-lg shadow-lg md:w-1/3">
                 <div class="w-full pt-1 pb-5">
                     <div
@@ -111,6 +111,12 @@
                 <form id="donators-payment-form">
                     @csrf
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="iddonat" id="iddonat" value="">
+                    <input type="hidden" name="numaid" id="numaid" value="{{ $aide->numaid }}">
+                    <input type="hidden" name="motifcontr" id="motifcontr" value="{{ $aide->motif }}">
+                    <input type="hidden" name="observation" id="observation" value="">
+                    <input type="hidden" name="datcontribu" id="datcontribu" value="{{ now()->format('Y-m-d') }}">
+                    <input type="hidden" name="heure" id="heure" value="{{ now()->format('H:i:s') }}">
                     <div class="mb-3 flex -mx-2">
                         <div class="px-2">
                             <label for="type1" class="flex items-center cursor-pointer">
@@ -134,7 +140,7 @@
                         <div>
                             <input
                                 class="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-blue-500 transition-colors"
-                                placeholder="Jean Dupont" type="text" required/>
+                                placeholder="Jean Dupont" type="text" required />
                         </div>
                     </div>
                     <div class="mb-3">
@@ -178,21 +184,21 @@
                             </select>
                         </div>
                     </div>
-                    <div class="mb-10 flex">
+                    <div class="mb-10 flex gap-10">
                         <div>
                             <label class="font-bold text-sm mb-2 ml-1">Code de sécurité</label>
                             <div>
                                 <input
                                     class="w-32 px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-blue-500 transition-colors"
-                                    placeholder="000" type="text" required />
+                                    placeholder="0000" type="text" required />
                             </div>
                         </div>
                         <div>
-                            <label class="font-bold text-sm mb-2 ml-1">Montant</label>
+                            <label class="font-bold text-sm mb-2 ml-1">Montant (US)</label>
                             <div>
-                                <input required
+                                <input required name="montantcontr"
                                     class="w-32 px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-blue-500 transition-colors"
-                                    placeholder="10$, 20$, ... 1000000$" type="text" name="montantcontr" />
+                                    placeholder="10, 20, ... 1000000" type="text" />
                             </div>
                         </div>
                     </div>
@@ -214,54 +220,35 @@
                     class="space-y-4 sm:space-y-2 rounded-lg border border-gray-100 bg-gray-50 p-6 dark:border-gray-700 dark:bg-gray-800 mb-6 md:mb-8">
                     <dl class="sm:flex items-center justify-between gap-4">
                         <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">Date de contribution</dt>
-                        <dd class="font-medium text-gray-900 dark:text-white sm:text-end">
+                        <dd id="daterecap" class="font-medium text-gray-900 dark:text-white sm:text-end">
 
                         </dd>
                     </dl>
                     <dl class="sm:flex items-center justify-between gap-4">
                         <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">Motif de contribution
                         </dt>
-                        <dd class="font-medium text-gray-900 dark:text-white sm:text-end">
+                        <dd id="motifrecap" class="font-medium text-gray-900 dark:text-white sm:text-end">
 
                         </dd>
                     </dl>
                     <dl class="sm:flex items-center justify-between gap-4">
                         <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">Heure de contribution
                         </dt>
-                        <dd class="font-medium text-gray-900 dark:text-white sm:text-end">
+                        <dd id="heurerecap" class="font-medium text-gray-900 dark:text-white sm:text-end">
 
                         </dd>
                     </dl>
                     <dl class="sm:flex items-center justify-between gap-4">
                         <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">Montant de contribution
                         </dt>
-                        <dd class="font-medium text-gray-900 dark:text-white sm:text-end">
+                        <dd id="montantrecap" class="font-medium text-gray-900 dark:text-white sm:text-end">
 
                         </dd>
                     </dl>
                     <dl class="sm:flex items-center justify-between gap-4">
                         <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">Mode de participation
                         </dt>
-                        <dd class="font-medium text-gray-900 dark:text-white sm:text-end">
-
-                        </dd>
-                    </dl>
-                    <dl class="sm:flex items-center justify-between gap-4">
-                        <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">Observation</dt>
-                        <dd class="font-medium text-gray-900 dark:text-white sm:text-end">
-
-                        </dd>
-                    </dl>
-                    <dl class="sm:flex items-center justify-between gap-4">
-                        <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">Numéro d'aide sociale
-                        </dt>
-                        <dd class="font-medium text-gray-900 dark:text-white sm:text-end">
-
-                        </dd>
-                    </dl>
-                    <dl class="sm:flex items-center justify-between gap-4">
-                        <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">ID du donateur</dt>
-                        <dd class="font-medium text-gray-900 dark:text-white sm:text-end">
+                        <dd id="moderecap" class="font-medium text-gray-900 dark:text-white sm:text-end">
 
                         </dd>
                     </dl>
@@ -288,7 +275,7 @@
                         url: '/donators',
                         data: formData,
                         success: function(data) {
-                            var iddonat = data.iddonat;
+                            $('#iddonat').attr('value', data);
                             $('#btn-submit-first').prop('disabled', true);
                             $('#donator-infos-form input').prop('readonly', true);
                             $('#donator-infos-form').addClass('select-none');
@@ -306,20 +293,6 @@
                     let i = $('meta[name="csrf-token"]').attr('content')
                     event.preventDefault();
                     var formData2 = $(this).serialize();
-                    var datcontribu = new Date('Y-m-d');
-                    var motifcontr = @json($aide->motif);
-                    var heure = datcontribu.toLocaleTimeString();
-                    var observation = '';
-                    var numaid = @json($aide->numaid);
-                    var iddonat = iddonat
-                    formData2 = $.extend(formData2, {
-                        datcontribu: datcontribu,
-                        motifcontr: motifcontr,
-                        heure: heure,
-                        observation: observation,
-                        numaid: numaid,
-                        iddonat: iddonat
-                    });
                     console.log(formData2);
                     var csrf_token = $('meta[name="csrf-token"]').attr('content')
                     $.ajax({
@@ -332,7 +305,19 @@
                         success: function(data) {
                             $('#btn-submit-second').prop('disabled', true);
                             $('#donators-payment-form input').prop('readonly', true);
+                            $('#donators-payment-form select').prop('disabled', true);
                             $('#third-step').show();
+                            let date = $('#datcontribu').attr('value');
+                            let mode = $('input[name="modeparticipat"]:checked').val();
+                            let motif = $('#motifcontr').attr('value');
+                            let heure = $('#heure').attr('value');
+                            let montant = $('input[name="montantcontr"]').val()
+
+                            $('#daterecap').text(date)
+                            $('#motifrecap').text(motif)
+                            $('#heurerecap').text(heure)
+                            $('#moderecap').text(mode)
+                            $('#montantrecap').text(montant);
                         }
                     });
                 });
