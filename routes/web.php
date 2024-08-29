@@ -17,6 +17,10 @@ Route::group(['prefix' => 'donators'], function () {
     Route::get('/create/{numaid}', [DonateurController::class, 'create'])->name('create_donator');
 });
 
+Route::group(['prefix' => 'participers'], function () {
+    Route::post('/', [ParticiperController::class, 'store']);
+});
+
 Route::group(['prefix' => 'users'], function () {
     Route::resource('/', UserController::class);
 });

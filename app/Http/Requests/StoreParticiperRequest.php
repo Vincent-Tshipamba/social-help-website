@@ -23,9 +23,9 @@ class StoreParticiperRequest extends FormRequest
     {
         return [
             'datcontribu' => 'required|date',
-            'motifcontr' => 'required|string',
+            'motifcontr' => 'string|nullable',
             'heure' => 'required|string',
-            'montant' => 'required|string',
+            'montantcontr' => 'required|string',
             'modeparticipat' => 'required|string',
             'observation' => 'string|nullable',
             'numaid' => 'required|integer',
