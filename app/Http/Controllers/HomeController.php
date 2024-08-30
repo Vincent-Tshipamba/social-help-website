@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pastor;
+use App\Models\Donateur;
 use App\Models\AideSociale;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -13,8 +16,19 @@ class HomeController extends Controller
     public function index()
     {
         $aide_sociales = AideSociale::latest()->take(3)->get();
-        
+
         return view('index', compact('aide_sociales'));
+    }
+
+    public function admin()
+    {
+        $socialhelps = AideSociale::count();
+        $donateurs = Donateur::count();
+        $users = Pastor::count();
+        $donations = DB::table('participers')
+            ->selectRaw('SUM(participers.montantcontr) AS total_contributed')
+            ->value('total_contributed');
+        return view('admin.dashboard', compact('socialhelps', 'users', 'donateurs', 'donations'));
     }
 
     /**

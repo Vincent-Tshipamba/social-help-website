@@ -58,9 +58,7 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('auth.register');
 });
-Route::get('/admin', function () {
-    return view('admin.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/admin', [HomeController::class,  'admin'])->middleware(['auth', 'verified'])->name('dashboard');
 
 // Profile Routes
 Route::group(['prefix' => 'profile'], function () {
