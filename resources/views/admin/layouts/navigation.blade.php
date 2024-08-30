@@ -15,8 +15,9 @@
                 </button>
                 <a href="{{ route('root') }}" class="flex ms-2 md:me-24">
                     <span
-                        class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap text-black dark:text-white">Ministere
-                        des Vainqueurs</span>
+                        class="font-semibold sm:text-2xl whitespace-nowrap relative w-[max-content] text-black dark:text-white font-mono text-2xl before:absolute before:inset-0 before:animate-typewriter before:bg-white after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-black">
+                        Dashboard administrateur
+                    </span>
                 </a>
             </div>
             <div class="flex items-center">

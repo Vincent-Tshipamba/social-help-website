@@ -14,6 +14,25 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            animation: {
+                typewriter: 'typewriter 2s steps(11) forwards',
+                caret: 'typewriter 2s steps(11) forwards, blink 1s steps(11) infinite 2s',
+            },
+            keyframes: {
+                typewriter: {
+                    to: {
+                        left: '100%',
+                    },
+                },
+                blink: {
+                    '0%': {
+                        opacity: '0',
+                    },
+                    '100%': {
+                        opacity: '0',
+                    },
+                },
+            },
         },
     },
 

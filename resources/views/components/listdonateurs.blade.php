@@ -7,7 +7,7 @@
         Ce sont les informations sur un donateur
     </p>
 </div>
-<div class="max-w-screen-xl mx-auto sm:p-6 md:p-6">
+<div class="w-full justify-center mx-auto sm:p-6 md:p-6">
     <div class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-10">
         @if (count($donateurs) > 0)
             @foreach ($donateurs as $item)
@@ -46,6 +46,14 @@
                                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                                     (243)
                                     {{ $item->adresse }}
+                                </dd>
+                            </div>
+                            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500">
+                                    Montant envoyé
+                                </dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    <span class="text-blue-400 font-bold">{{ $item->total_contributed . " $" }}</span>
                                 </dd>
                             </div>
                         </dl>

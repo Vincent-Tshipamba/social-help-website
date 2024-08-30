@@ -1,61 +1,70 @@
                 @props(['donations'])
 
-                @if (count($donations) > 0)
-                    @foreach ($donations as $donation)
-                        <div
-                            class="space-y-4 sm:space-y-2 rounded-lg border border-gray-100 bg-gray-50 p-6 dark:border-gray-700 dark:bg-gray-800 mb-6 md:mb-8">
+                <div class="mx-auto sm:p-6 md:p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-10">
+                        @if (count($donations) > 0)
+                            @foreach ($donations as $donation)
+                                <div class="bg-white overflow-hidden shadow rounded-lg border">
+                                    <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
+                                        <dl class="sm:divide-y sm:divide-gray-200">
+                                            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                                <dt class="text-sm font-medium text-gray-500">
+                                                    Date de contribution
+                                                </dt>
+                                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                    {{ $donation->datcontribu }}
+                                                </dd>
+                                            </div>
+                                            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                                <dt class="text-sm font-medium text-gray-500">
+                                                    Motif
+                                                </dt>
+                                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                    {{ $donation->motifcontr }}
+                                                </dd>
+                                            </div>
+                                            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                                <dt class="text-sm font-medium text-gray-500">
+                                                    Heure de contribution
+                                                </dt>
+                                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                    {{ $donation->heure }}
+                                                </dd>
+                                            </div>
+                                            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                                <dt class="text-sm font-medium text-gray-500">
+                                                    Montant reçu
+                                                </dt>
+                                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                    {{ $donation->montantcontr }}
+                                                </dd>
+                                            </div>
+                                            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                                <dt class="text-sm font-medium text-gray-500">
+                                                    Mode de contribution
+                                                </dt>
+                                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                    {{ $donation->modeparticipat }}
+                                                </dd>
+                                            </div>
+                                            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                                <dt class="text-sm font-medium text-gray-500">
+                                                    Nom complet du donateur
+                                                </dt>
+                                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                    {{ $donation->donateur->nomsdonat }}
+                                                </dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @else
                             <dl class="sm:flex items-center justify-between gap-4">
-                                <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">Date de
-                                    contribution
+                                <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">
+                                    Aucun don n'a été collecté pour l'instant.
                                 </dt>
-                                <dd id="dataide" class="font-medium text-gray-900 dark:text-white sm:text-end">
-                                    {{ $donation->datcontribu }}
-                                </dd>
                             </dl>
-                            <dl class="sm:flex items-center justify-between gap-4">
-                                <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">Motif de
-                                    contribution
-                                </dt>
-                                <dd id="motifcontr" class="font-medium text-gray-900 dark:text-white sm:text-end">
-                                    {{ $donation->motifcontr }}
-                                </dd>
-                            </dl>
-                            <dl class="sm:flex items-center justify-between gap-4">
-                                <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">Heure de
-                                    contribution
-                                </dt>
-                                <dd id="heurecontr" class="font-medium text-gray-900 dark:text-white sm:text-end">
-                                    {{ $donation->heure }}
-                                </dd>
-                            </dl>
-                            <dl class="sm:flex items-center justify-between gap-4">
-                                <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">Montant envoyé
-                                </dt>
-                                <dd id="montantcontr" class="font-medium text-gray-900 dark:text-white sm:text-end">
-                                    {{ $donation->montantcontr }}
-                                </dd>
-                            </dl>
-                            <dl class="sm:flex items-center justify-between gap-4">
-                                <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">Mode de transfert
-                                    d'argent
-                                </dt>
-                                <dd id="modeparticipat" class="font-medium text-gray-900 dark:text-white sm:text-end">
-                                    {{ $donation->modeparticipat }}
-                                </dd>
-                            </dl>
-                            <dl class="sm:flex items-center justify-between gap-4">
-                                <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">Noms du donateur
-                                </dt>
-                                <dd id="nomsdonat" class="font-medium text-gray-900 dark:text-white sm:text-end">
-                                    {{ $donation->donateur->nomsdonat }}
-                                </dd>
-                            </dl>
-                        </div>
-                    @endforeach
-                @else
-                    <dl class="sm:flex items-center justify-between gap-4">
-                        <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">
-                            Aucun don n'a été collecté pour l'instant.
-                        </dt>
-                    </dl>
-                @endif
+                        @endif
+                    </div>
+                </div>
