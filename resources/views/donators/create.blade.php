@@ -206,7 +206,7 @@
                             <div>
                                 <input
                                     class="w-32 px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-blue-500 transition-colors"
-                                    placeholder="0000" type="text" required />
+                                    placeholder="0000" type="password" required />
                             </div>
                         </div>
                         <div>

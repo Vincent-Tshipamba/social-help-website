@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="section-title">
+                <div class="section-title mt-3">
                     <h2>Prenez contact avec nous pour plus d'informations</h2>
                 </div>
             </div>

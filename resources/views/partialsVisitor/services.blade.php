@@ -13,7 +13,7 @@
             <div class="col-lg-4 col-md-6 col-12">
                 <!-- Start Single Service -->
                 <div class="single-service">
-                    <h4><a href="service-details.html">Prière et méditation</a></h4>
+                    <h4><a href="" onclick="event.preventDefault()">Prière et méditation</a></h4>
                     <p>Nous offrons des séances de prière et de méditation pour aider les gens à se connecter avec Dieu.
                     </p>
                 </div>
@@ -23,7 +23,7 @@
                 <!-- Start Single Service -->
                 <div class="single-service">
                     <i class="icofont icofont-bible"></i>
-                    <h4><a href="service-details.html">Étude biblique</a></h4>
+                    <h4><a href="service-details.html" onclick="event.preventDefault()">Étude biblique</a></h4>
                     <p>Nous offrons des études bibliques pour aider les gens à comprendre et à appliquer les
                         enseignements de la Bible.</p>
                 </div>
@@ -33,7 +33,7 @@
                 <!-- Start Single Service -->
                 <div class="single-service">
                     <i class="icofont icofont-community"></i>
-                    <h4><a href="service-details.html">Communauté chrétienne</a></h4>
+                    <h4><a href="service-details.html" onclick="event.preventDefault()">Communauté chrétienne</a></h4>
                     <p>Nous offrons une communauté chrétienne pour aider les gens à se connecter avec d'autres croyants
                         et à grandir dans leur foi.</p>
                 </div>
@@ -43,7 +43,7 @@
                 <!-- Start Single Service -->
                 <div class="single-service">
                     <i class="icofont icofont-music"></i>
-                    <h4><a href="service-details.html">Louange et adoration</a></h4>
+                    <h4><a href="service-details.html" onclick="event.preventDefault()">Louange et adoration</a></h4>
                     <p>Nous offrons des séances de louange et d'adoration pour aider les gens à exprimer leur gratitude
                         et leur amour pour Dieu.</p>
                 </div>
@@ -53,7 +53,7 @@
                 <!-- Start Single Service -->
                 <div class="single-service">
                     <i class="icofont icofont-charity"></i>
-                    <h4><a href="service-details.html">Ministère de charité</a></h4>
+                    <h4><a href="service-details.html" onclick="event.preventDefault()">Ministère de charité</a></h4>
                     <p>Nous offrons des ministères de charité pour aider les gens dans le besoin et pour servir la
                         communauté.</p>
                 </div>
@@ -63,7 +63,7 @@
                 <!-- Start Single Service -->
                 <div class="single-service">
                     <i class="icofont icofont-counseling"></i>
-                    <h4><a href="service-details.html">Conseil et accompagnement</a></h4>
+                    <h4><a href="service-details.html" onclick="event.preventDefault()">Conseil et accompagnement</a></h4>
                     <p>Nous offrons des conseils et des accompagnements pour aider les gens à traverser les difficultés
                         de la vie.</p>
                 </div>

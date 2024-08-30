@@ -23,6 +23,9 @@
     @include('partialsVisitor.services')
     <!--/ End service -->
 
+    <!-- About us -->
+    @include('partialsVisitor.about')
+    <!--/ End About us -->
 
     <!-- Start Appointment -->
     @include('partialsVisitor.contact')

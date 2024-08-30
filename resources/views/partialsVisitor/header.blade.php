@@ -28,7 +28,7 @@
                         <div class="col-lg-3 col-md-3 col-12">
                             <!-- Start Logo -->
                             <div class="logo">
-                                <a href="#_"
+                                <a href="#"
                                     class="flex items-center mb-5 font-medium text-gray-900 lg:w-auto lg:items-center lg:justify-center md:mb-0">
                                     <span class="mx-auto text-2xl font-black text-gray-900">Chapelle des
                                         Vainqueurs</span>
@@ -48,7 +48,7 @@
                                             <a href="#">Accueil</a>
                                         </li>
                                         <li><a href="#services">Nos Services </a></li>
-                                        <li><a href="#" class="md:hidden">Qui sommes-nous ? </a></li>
+                                        <li><a href="#about" class="md:hidden">Qui sommes-nous ? </a></li>
                                         <li><a href="#contact" class="md:hidden">Nous contacter </a></li>
                                     </ul>
                                 </nav>
@@ -57,7 +57,7 @@
                         </div>
                         <div class="col-lg-2 col-12">
                             <div class="get-quote">
-                                <a href="appointment.html" class="btn">Faire un don</a>
+                                <a href="#donates" class="btn">Faire un don</a>
                             </div>
                         </div>
                     </div>

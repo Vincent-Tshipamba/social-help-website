@@ -15,7 +15,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $aide_sociales = AideSociale::latest()->take(3)->get();
+        $aide_sociales = DB::table('lancers')
+            ->join('aide_sociales', 'lancers.numaid', '=', 'aide_sociales.numaid')
+            ->selectRaw('lancers.*, aide_sociales.*')
+            ->take(3)
+            ->get();
 
         return view('index', compact('aide_sociales'));
     }
