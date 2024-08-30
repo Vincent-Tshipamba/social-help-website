@@ -1,4 +1,20 @@
 <x-app-layout>
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-red-400"
+                role="alert">
+
+                <span class="font-medium">{{ $error }}</span>
+
+            </div>
+        @endforeach
+    @endif
+    @if (Session('success'))
+        <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
+            role="alert">
+            <span class="font-medium">{{ session('success') }}</span>
+        </div>
+    @endif
     <div class="container relative flex flex-col justify-center overflow-hidden bg-gray-50 sm:py-12">
         <h1 class="text-3xl font-bold text-center mb-4">Devenir donateur</h1>
         <ol class="flex items-center w-full mb-4 sm:mb-5">
@@ -254,7 +270,7 @@
                     </dl>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a href="#"
+                    <a href="{{ route('root') }}"
                         class="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
                         Retour a la page d'accueil</a>
                 </div>
