@@ -59,7 +59,7 @@
     <div id="default-styled-tab-content">
         <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-profile" role="tabpanel"
             aria-labelledby="details-tab">
-            <x-detailsocialhelp :socialhelp="$socialhelp"></x-detailsocialhelp>
+            <x-detailsocialhelp :socialhelps="$socialhelps"></x-detailsocialhelp>
         </div>
         <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-dashboard" role="tabpanel"
             aria-labelledby="donations-tab">

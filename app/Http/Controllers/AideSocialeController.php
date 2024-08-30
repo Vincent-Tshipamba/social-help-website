@@ -31,6 +31,14 @@ class AideSocialeController extends Controller
     public function show($id)
     {
         $socialhelp = AideSociale::find($id);
+        $socialhelps = DB::table('lancers')
+            ->join('aide_sociales', 'lancers.numaid', '=', 'aide_sociales.numaid')
+            ->join('pastors', 'lancers.matri', '=', 'pastors.matri')
+            ->join('services', 'pastors.codserv', '=', 'services.codserv')
+            ->where('aide_sociales.numaid', $id)
+            ->selectRaw('pastors.*, lancers.*, aide_sociales.*, services.libserv')
+            ->get();
+
         $donations = Participer::where('numaid', $id)->get();
 
         $donateurs = DB::table('participers')
@@ -41,7 +49,7 @@ class AideSocialeController extends Controller
             ->selectRaw('donateurs.*, SUM(participers.montantcontr) AS total_contributed')
             ->get();
 
-        return view('admin.social-help.show', compact('socialhelp', 'donations', 'donateurs'));
+        return view('admin.social-help.show', compact('socialhelps', 'donations', 'donateurs'));
     }
 
     public function edit(AideSociale $aideSociale)
