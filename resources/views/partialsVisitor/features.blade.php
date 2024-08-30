@@ -26,7 +26,7 @@
                 <!-- Start Single features -->
                 <div class="single-features">
                     <div class="signle-icon">
-                        <i class="icofont icofont-bible"></i>
+                        <i class="icofont icofont-book"></i>
                     </div>
                     <h3>Études bibliques</h3>
                     <p>Nous offrons des études bibliques hebdomadaires pour aider les gens à comprendre et à appliquer

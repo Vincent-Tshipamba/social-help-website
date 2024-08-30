@@ -26,7 +26,7 @@
             <div class="col-lg-3 col-md-6 col-12">
                 <!-- Start Single Fun -->
                 <div class="single-fun">
-                    <i class="icofont icofont-community"></i>
+                    <i class="icofont icofont-people"></i>
                     <div class="content">
                         <span class="counter">2000</span>
                         <p>Membres de la communauté</p>

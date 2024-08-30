@@ -15,7 +15,7 @@ Route::get('/', [HomeController::class, 'index'])->name('root');
 // Donators Routes
 Route::group(['prefix' => 'donators'], function () {
     // Donators Index
-    Route::get('/', [DonateurController::class, 'index'])->name('donators.index');
+    Route::get('/', [DonateurController::class, 'index'])->middleware(['auth', 'verified'])->name('donators.index');
     // Create Donator
     Route::post('/', [DonateurController::class, 'store']);
     // Create Donator with numaid
@@ -31,10 +31,8 @@ Route::group(['prefix' => 'participers'], function () {
 // AideSociales Routes
 Route::group(['prefix' => 'socialhelps'], function () {
     // SocialHelp index
-    Route::get('/', [AideSocialeController::class, 'index'])->name('socialhelps');
-    Route::get('/{numaid}', [AideSocialeController::class, 'show'])->name('socialhelps.show');
-    // Store Participer
-    Route::post('/', [ParticiperController::class, 'store']);
+    Route::get('/', [AideSocialeController::class, 'index'])->name('socialhelps')->middleware(['auth', 'verified']);
+    Route::get('/{numaid}', [AideSocialeController::class, 'show'])->middleware(['auth', 'verified'])->name('socialhelps.show');
 });
 
 // Users Routes
@@ -49,7 +47,7 @@ Route::group(['prefix' => 'users'], function () {
     Route::post('/', [UserController::class, 'store'])->name('users.store');
     // Update User
     Route::post('/{id}', [UserController::class, 'update'])->name('users.update');
-});
+})->middleware(['auth', 'verified']);
 
 // Authentication Routes
 Route::get('/login', function () {
@@ -68,12 +66,9 @@ Route::group(['prefix' => 'profile'], function () {
     Route::patch('/', [ProfileController::class, 'update'])->name('profile.update');
     // Delete Profile
     Route::delete('/', [ProfileController::class, 'destroy'])->name('profile.destroy');
-})->middleware('auth');
+})->middleware(['auth', 'verified']);
 
 // Assign Roles Route
 Route::post('/assignRoles/{role}/{user}', [RoleController::class, 'assignRoles'])->name('assign_role');
-
-// Store Participer ( duplicate route, consider removing )
-Route::post('/participers', [ParticiperController::class, 'store']);
 
 require __DIR__ . '/auth.php';

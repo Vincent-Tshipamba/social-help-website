@@ -13,6 +13,11 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-12">
                             <div class="form-group">
+                                <input name="prenom" type="text" placeholder="Prénom">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="form-group">
                                 <input name="nom" type="text" placeholder="Nom">
                             </div>
                         </div>
@@ -29,26 +34,12 @@
                         <div class="col-lg-6 col-md-6 col-12">
                             <div class="form-group">
                                 <div class="nice-select form-control wide" tabindex="0"><span
-                                        class="current">Département</span>
+                                        class="current">Genre</span>
                                     <ul class="list">
-                                        <li data-value="1" class="option selected ">Département</li>
-                                        <li data-value="2" class="option">Clinique cardiaque</li>
-                                        <li data-value="3" class="option">Neurologie</li>
-                                        <li data-value="4" class="option">Dentisterie</li>
-                                        <li data-value="5" class="option">Gastro-entérologie</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="form-group">
-                                <div class="nice-select form-control wide" tabindex="0"><span
-                                        class="current">Médecin</span>
-                                    <ul class="list">
-                                        <li data-value="1" class="option selected ">Médecin</li>
-                                        <li data-value="2" class="option">Dr. Akther Hossain</li>
-                                        <li data-value="3" class="option">Dr. Dery Alex</li>
-                                        <li data-value="4" class="option">Dr. Jovis Karon</li>
+                                        <li data-value="1" class="option selected ">Choisir une option</li>
+                                        <li data-value="2" class="option">Masculin</li>
+                                        <li data-value="3" class="option">Féminin</li>
+                                        <li data-value="4" class="option">Ne pas spécifier</li>
                                     </ul>
                                 </div>
                             </div>
