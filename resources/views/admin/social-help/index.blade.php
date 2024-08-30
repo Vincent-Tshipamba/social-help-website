@@ -27,53 +27,53 @@
 
     <div class="py-6 relative overflow-x-auto">
 
-        <table id="donatorsTable" class="p-5 w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <table id="socialhelpsTable" class="p-5 w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         N°
                     </th>
                     <th scope="col" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        Noms
+                        Date lancement
                     </th>
                     <th scope="col" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        Profession
+                        Motif
                     </th>
                     <th scope="col" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        Téléphone
+                        Nature
                     </th>
                     <th scope="col"
-                        class="adresse px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        Adresse
+                        class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        Analyse
                     </th>
-                    {{-- <th scope="col" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <th scope="col" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         Action
-                    </th> --}}
+                    </th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($donators as $key => $donator)
+                @foreach ($socialhelps as $key => $socialhelp)
                     <tr
                         class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {{ $key + 1 }}
                         </th>
                         <td class="px-6 py-4">
-                            {{ $donator->nomsdonat }}
+                            {{ $socialhelp->dataide }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $donator->profess }}
+                            {{ $socialhelp->motif }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $donator->telephone }}
+                            {{ $socialhelp->nature->libnat }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $donator->adresse }}
+                            {{ $socialhelp->analyse->objet }}
                         </td>
-                        {{-- <td class="px-6 py-4">
-                            <a href="{{ route('users.update', $user->id) }}" onclick="update(event)"
-                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td> --}}
+                        <td class="px-6 py-4">
+                            <a href="{{ route('socialhelps.show', $socialhelp->numaid) }}"
+                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Show</a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
@@ -83,11 +83,7 @@
 
 @section('script')
     <script>
-        $('#donatorsTable').DataTable({
-            columnDefs: [{
-                visible: false,
-                targets: '.adresse'
-            }],
+        $('#socialhelpsTable').DataTable({
             layout: {
                 topStart: {
                     pageLength: {
@@ -133,7 +129,7 @@
                 [10, 25, 50, "All"]
             ]
         });
-        $('#donatorsTable').css('width', '100%');
+        $('#socialhelpsTable').css('width', '100%');
 
         $('div.dt-container div.dt-layout-row').css('display', 'unset');
 
