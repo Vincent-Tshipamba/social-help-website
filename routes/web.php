@@ -52,6 +52,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         // Delete Profile
         Route::delete('/', [ProfileController::class, 'destroy'])->name('profile.destroy');
     });
+    Route::get('/admin', [HomeController::class, 'admin'])->name('dashboard');
 
     // Assign Roles Route
     Route::post('/assignRoles/{role}/{user}', [RoleController::class, 'assignRoles'])->name('assign_role');
@@ -75,7 +76,6 @@ Route::group([], function () {
     Route::get('/register', function () {
         return view('auth.register');
     });
-    Route::get('/admin', [HomeController::class, 'admin'])->name('dashboard');
 });
 
 require __DIR__ . '/auth.php';
