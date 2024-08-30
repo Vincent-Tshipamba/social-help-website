@@ -61,9 +61,9 @@
     </div>
     <!-- End Preloader -->
 
-    <div class="bg-gray-100 dark:bg-gray-900 mt-24">
+    <div class="bg-gray-100 dark:bg-gray-900 mt-16">
         @include('admin.layouts.navigation')
-        <div class="p-8 sm:ml-64 mt-10">
+        <div class="p-6 sm:ml-64">
             <main>
                 @yield('content')
 
