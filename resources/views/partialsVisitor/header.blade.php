@@ -48,10 +48,8 @@
                                             <a href="#">Accueil</a>
                                         </li>
                                         <li><a href="#services">Nos Services </a></li>
-                                        <li><a href="#">Blog </a></li>
                                         <li><a href="#" class="md:hidden">Qui sommes-nous ? </a></li>
                                         <li><a href="#contact" class="md:hidden">Nous contacter </a></li>
-                                        <li><a href="#">S'inscrire </a></li>
                                     </ul>
                                 </nav>
                             </div>
