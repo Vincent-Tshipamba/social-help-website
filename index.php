@@ -15,10 +15,13 @@
     <?php if (isset($_SESSION['message'])): ?>
         <div class="alert alert-<?php echo $_SESSION['message_type']; ?>" role="alert">
             <?php echo $_SESSION['message']; ?>
+            <a href="paiements.php">Voir tous les paiements</a>
         </div>
         <?php unset($_SESSION['message']); ?>
     <?php endif; ?>
-<div class="row justify-content-center align-items-center" style="height: 100vh;">
+
+
+    <div class="row justify-content-center align-items-center" style="height: 100vh;">
         <div class="card text-center col-md-6 col-12 mb-4 mb-md-0">
             <div class="card-header text-uppercase text-center fs-1 fw-bold mb-4">
                 Aide sociale
@@ -34,7 +37,10 @@
             </div>
         </div>
         <div class="col-md-4 col-12">
-            <img src="./-170927-aide-social.png" alt="Illustration de l'aide sociale" class="img-fluid rounded">
+            <img src="./-170927-aide-social.png" alt="Illustration de l'aide sociale" class="rounded">
+            <a href="listpaiement.php">Liste des paiements</a>
+            <br/>
+            <a href="donateurs.php">Liste des donateurs</a>
         </div>
     </div>
     <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>

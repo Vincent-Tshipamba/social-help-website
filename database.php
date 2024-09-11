@@ -3,8 +3,8 @@ class Database
 {
     private $host = "localhost";
     private $db_name = "chapelle-des-vainqueurs";
-    private $username = "root";
-    private $password = "";
+    private $username = "Vincent";
+    private $password = "Vincent";
     public $conn;
 
     // Méthode pour obtenir la connexion à la base de données
